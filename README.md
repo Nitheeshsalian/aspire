@@ -1,12 +1,10 @@
 # aspire 
 
 Nitheesh S 🙂
-# React Native Template
-
 
 This is code challenge for Aspire.
 
-## Prerequisites
+## PrerequisitesCancel changes
 
 - [Node.js](https://nodejs.org) and npm (Recommended: Use [nvm](https://github.com/nvm-sh/nvm))
 - [Watchman](https://facebook.github.io/watchman)
