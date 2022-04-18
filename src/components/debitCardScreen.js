@@ -1,11 +1,15 @@
 import * as React from 'react';
 import { View, Image, ScrollView } from 'react-native';
 import styles from './debitStyle';
-import Text from '../utils/text'; //Custom text component where default font style have been set.
+//Custom text component where default font style have been set.
+import Text from '../utils/text'; 
+
+//import images
 const logo = require('../assets/images/Logo.png');
 const hideEye = require('../assets/images/Group.png');
 const aspireLogo = require('../assets/images/AspireLogo.png');
 const visaLogo = require('../assets/images/VisaLogo.png');
+
 
 export function DebitCardScreen() {
   return (

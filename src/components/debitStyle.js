@@ -48,16 +48,16 @@ const styles = StyleSheet.create({
     aspireLogoRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', paddingRight: 24, paddingTop: 24 },
     aspireLogo: { height: 21, width: 74 },
     nameText: {
-        fontSize: 22, fontWeight: 'bold', paddingLeft: 24
+        fontSize: 22, fontWeight: 'bold', paddingLeft: 24, paddingTop: 24
     },
     cardNumberText: {
         fontSize: 14, fontWeight: '600', paddingLeft: 24, paddingTop: 24
     },
     validityText: {
-        fontSize: 14, fontWeight: '600', paddingLeft: 24, paddingTop: 24
+        fontSize: 14, fontWeight: '600', paddingLeft: 24, paddingTop: 15
     },
     visaLogo: { height: 20, width: 60 },
-    visaRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', paddingRight: 24, paddingTop: 10 },
+    visaRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', paddingRight: 24 },
 })
 
 export default styles;
