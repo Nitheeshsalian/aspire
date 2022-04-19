@@ -7,7 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 //Screen import
 import { HomeScreen } from './components/home';
-import { DebitCardScreen } from './components/debitCardScreen';
+import { DebitCardScreen } from './components/debitCard/debitCardScreen';
 import { PaymentScreen } from './components/paymentScreen';
 import { CreditScreen } from './components/creditScreen';
 import { ProfileScreen } from './components/profileScreen';

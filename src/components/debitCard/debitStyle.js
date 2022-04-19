@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     balanceWrapper: { flexDirection: 'row', alignItems: 'center' },
     s$: { fontWeight: 'bold', fontSize: 12 },
     balanceText: { fontSize: 24, marginTop: 15, marginLeft: 10, fontWeight: 'bold' },
-    cardWrapper: { position: 'absolute', top: 280, backgroundColor: '#fff', width: '100%', borderTopStartRadius: 20, borderTopRightRadius: 20, height: '100%' },
+    cardWrapper: { position: 'absolute', top: -100, backgroundColor: '#fff', width: '100%', borderTopStartRadius: 20, borderTopRightRadius: 20, height: '200%' },
     hideCardContent: {
         backgroundColor: '#ffff', width: 150, borderTopStartRadius: 10,
         borderTopRightRadius: 10, height: 44, position: 'absolute',
@@ -58,6 +58,15 @@ const styles = StyleSheet.create({
     },
     visaLogo: { height: 20, width: 60 },
     visaRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', paddingRight: 24 },
+    imageH12: {
+        height: 32,
+        width: 32
+    },
+    pl12: { paddingLeft: 12 },
+    topText: { color: '#000', fontSize: 14, color: '#25345F' },
+    bottomText: { color: '#000', fontSize: 13, color: '#222222', fontWeight: '200' },
+    textBox: { flexDirection: 'row', marginTop: 32, justifyContent: 'space-between' },
+
 })
 
 export default styles;
