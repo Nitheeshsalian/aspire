@@ -5,9 +5,12 @@ import Text from '../../utils/text';
 import styles from './debitStyle';
 
 // Common card component which takes image source, header text and body as Parameters
-export function CommonCard({ source, header, body, isSwitch = false }) {
+export function CommonCard({navigation, source, header, body, isSwitch = false }) {
     const [isEnabled, setIsEnabled] = useState(false);
-    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+    const toggleSwitch = () => {
+        setIsEnabled(previousState => !previousState);
+        navigation.navigate('SpendingLimit')
+    } 
 
 
     return (

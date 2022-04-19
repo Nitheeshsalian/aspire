@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { View, Image, Switch, Animated, PanResponder } from 'react-native';
 import styles from './debitStyle';
 //Custom text component where default font style have been set.
@@ -13,8 +13,14 @@ const transfer = require('../../assets/images/Transfer.png');
 const freeze = require('../../assets/images/Freeze.png');
 const deactivated = require('../../assets/images/deactivated.png');
 
+//reducer import
+import store from '../../reducers/store';
+import { useSelector } from 'react-redux';
+const debitStore = state => state.debit;
 
-export function DebitCardScreen() {
+export function DebitCardScreen({ navigation }) {
+
+  const debit = useSelector(debitStore);
 
   //pan responder to move debit card vertically
   //This function needs to be fixed to move only sepcified height 
@@ -59,7 +65,7 @@ export function DebitCardScreen() {
             <View style={styles.balanceSqaure}>
               <Text style={styles.s$}>S$</Text>
             </View>
-            <Text style={styles.balanceText}>3,000</Text>
+            <Text style={styles.balanceText}>{debit.limit}</Text>
           </View>
         </View>
       </View>
@@ -77,12 +83,14 @@ export function DebitCardScreen() {
           {/* Card menu options */}
           <View style={{ paddingTop: 0, marginLeft: 32, marginRight: 32 }}>
             <CommonCard
+              navigation={navigation}
               source={insightLogo}
               header="Top-up account"
               body="Deposit money to your account to use with card"
             />
 
             <CommonCard
+              navigation={navigation}
               source={transfer}
               header="Weekly spending limit"
               body="You haven't set any spending limit on card"
@@ -90,17 +98,20 @@ export function DebitCardScreen() {
             />
 
             <CommonCard
+              navigation={navigation}
               source={freeze}
               header="Freeze Card"
               body="Your debit card is currently active"
               isSwitch={true}
             />
             <CommonCard
+              navigation={navigation}
               source={insightLogo}
               header="Get a new card"
               body="This deactivates your current card"
             />
             <CommonCard
+              navigation={navigation}
               source={deactivated}
               header="Deactivated card"
               body="Your previously deactivated cards"

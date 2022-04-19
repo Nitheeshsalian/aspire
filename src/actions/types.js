@@ -1,0 +1,4 @@
+export default TYPES = {
+    INCREMENT_LIMIT: "INCREMENT_LIMIT",
+    RESET_LIMIT: "RESET_LIMIT"
+}

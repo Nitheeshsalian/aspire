@@ -1,18 +1,20 @@
 import React, { useState, useRef } from 'react';
-import { View, Image, Switch, Animated, PanResponder, TextInput } from 'react-native';
+import { View, Image, Switch, Animated, PanResponder, TextInput, TouchableOpacity } from 'react-native';
 import styles from './debitStyle';
 import Text from '../../utils/text';
-
+import store from '../../reducers/store';
+import TYPES from '../../actions/types';
 //import images
 const logo = require('../../assets/images/Logo.png');
 const meter = require('../../assets/images/Meter.png');
-
 
 //Icons import
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons/faAngleLeft';
 
-export function SpendingLimit() {
+
+
+export function SpendingLimit({ navigation }) {
 
     const [text, onChangeText] = React.useState("Useless Text");
     const [number, setNumber] = React.useState(null);
@@ -21,11 +23,16 @@ export function SpendingLimit() {
         setNumber(value)
     }
 
+    const updateLimit = (value) => {
+        store.dispatch({ type: TYPES.INCREMENT_LIMIT, payload: value })
+    }
     return (
         <React.Fragment>
             <View style={styles.spendingContainer}>
                 <View style={styles.headerWrapper2}>
-                    <FontAwesomeIcon icon={faAngleLeft} color="#fff" size={24} />
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                        <FontAwesomeIcon icon={faAngleLeft} color="#fff" size={24} />
+                    </TouchableOpacity>
                     <Image
                         style={styles.logo}
                         source={logo}
@@ -60,9 +67,9 @@ export function SpendingLimit() {
                             Here weekly means the last 7 days - not the calender week
                         </Text>
                         <View style={styles.amountGroup}>
-                            <View style={styles.amountText}>
+                            <TouchableOpacity onPress={() => updateLimit(5000)} style={styles.amountText}>
                                 <Text style={styles.amountTextStyle}>S$ 5,000</Text>
-                            </View>
+                            </TouchableOpacity>
                             <View style={styles.amountText}>
                                 <Text style={styles.amountTextStyle}>S$ 10,000</Text>
                             </View>
