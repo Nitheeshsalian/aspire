@@ -19,6 +19,11 @@ export function debitCardReducer(state = initialState, action) {
                 ...state,
                 limit: 0
             };
+        case TYPES.USER_FETCH_SUCCEEDED:
+            return {
+                ...state,
+                limit: 2020202
+            }
 
         default:
             // If this reducer doesn't recognize the action type, or doesn't
