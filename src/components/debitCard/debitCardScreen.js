@@ -4,11 +4,10 @@ import styles from './debitStyle';
 //Custom text component where default font style have been set.
 import Text from '../../utils/text';
 import { CommonCard } from './commonCard';
+import { CardBlock } from './cardBlock';
+
 //import images
 const logo = require('../../assets/images/Logo.png');
-const hideEye = require('../../assets/images/Group.png');
-const aspireLogo = require('../../assets/images/AspireLogo.png');
-const visaLogo = require('../../assets/images/VisaLogo.png');
 const insightLogo = require('../../assets/images/insight.png');
 const transfer = require('../../assets/images/Transfer.png');
 const freeze = require('../../assets/images/Freeze.png');
@@ -74,35 +73,7 @@ export function DebitCardScreen() {
       >
         <View style={styles.cardWrapper}>
 
-          {/* credit card block */}
-          <React.Fragment>
-            <View style={styles.greenCard}>
-              <View style={styles.aspireLogoRow}>
-                <Image
-                  style={styles.aspireLogo}
-                  source={aspireLogo}
-                />
-              </View>
-              <Text style={styles.nameText}>Mark Henry</Text>
-              <Text style={styles.cardNumberText}>5 6 4 7    3 4 1 1    2 4 1 3    2 0 2 0</Text>
-              <Text style={styles.validityText}>Thru: 12/20     CVV: 456</Text>
-              <View style={styles.visaRow}>
-                <Image
-                  style={styles.visaLogo}
-                  source={visaLogo}
-                />
-              </View>
-            </View>
-
-            {/* credit card hide block */}
-            <View style={styles.hideCardContent}>
-              <Image
-                style={styles.eyeImage}
-                source={hideEye}
-              />
-              <Text style={styles.hideText}>Hide card number</Text>
-            </View>
-          </React.Fragment>
+          <CardBlock />
           {/* Card menu options */}
           <View style={{ paddingTop: 0, marginLeft: 32, marginRight: 32 }}>
             <CommonCard

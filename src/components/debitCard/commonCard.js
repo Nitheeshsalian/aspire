@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-
 import { View, Image, Switch } from 'react-native';
 import Text from '../../utils/text';
 import styles from './debitStyle';
