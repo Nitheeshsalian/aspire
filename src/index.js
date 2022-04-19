@@ -4,6 +4,7 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //Screen import
 import { HomeScreen } from './components/home';
@@ -11,6 +12,7 @@ import { DebitCardScreen } from './components/debitCard/debitCardScreen';
 import { PaymentScreen } from './components/paymentScreen';
 import { CreditScreen } from './components/creditScreen';
 import { ProfileScreen } from './components/profileScreen';
+import { SpendingLimit } from './components/debitCard/spendingLimit'
 
 //Icons import
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
@@ -21,6 +23,18 @@ import { faCircleArrowUp } from '@fortawesome/free-solid-svg-icons/faCircleArrow
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
 
 const Tab = createBottomTabNavigator();
+const HomeStack = createNativeStackNavigator();
+
+function DebitCardStackScreen() {
+  return (
+    <HomeStack.Navigator screenOptions={{
+      headerShown: false
+    }}>
+      <HomeStack.Screen name="Debit Card" component={DebitCardScreen} />
+      <HomeStack.Screen name="SpendingLimit" component={SpendingLimit} />
+    </HomeStack.Navigator>
+  );
+}
 
 function Routes() {
   return (
@@ -31,7 +45,7 @@ function Routes() {
           tabBarActiveTintColor: '#01d167',
           tabBarInactiveTintColor: 'gray',
         })}
-        initialRouteName="Debit Card"
+        initialRouteName="DebitCardHome"
       >
         <Tab.Screen
           name="Home"
@@ -43,8 +57,8 @@ function Routes() {
           }}
         />
         <Tab.Screen
-          name="Debit Card"
-          component={DebitCardScreen}
+          name="DebitCardHome"
+          component={DebitCardStackScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
               <FontAwesomeIcon icon={faCreditCard} color={color} size={size} />
