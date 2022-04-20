@@ -1,8 +1,8 @@
 # aspire 
 
-Nitheesh S 🙂
-nitheeshsalian@gmail.com
-[https://www.linkedin.com/in/nitheeshsalian/](https://www.linkedin.com/in/nitheeshsalian/)
+Nitheesh S 🙂 <br />
+nitheeshsalian@gmail.com <br />
+[https://www.linkedin.com/in/nitheeshsalian/](https://www.linkedin.com/in/nitheeshsalian/) <br />
 
 This is code challenge for Aspire.
 
