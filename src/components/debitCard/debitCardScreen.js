@@ -5,6 +5,7 @@ import styles from './debitStyle';
 import Text from '../../utils/text';
 import {CommonCard} from './commonCard';
 import {CardBlock} from './cardBlock';
+import {ProgressBar} from './progressBar';
 
 //import images
 const logo = require('../../assets/images/Logo.png');
@@ -54,25 +55,31 @@ export function DebitCardScreen({navigation}) {
             <View style={styles.balanceSqaure}>
               <Text style={styles.s$}>S$</Text>
             </View>
-            <Text style={styles.balanceText}>{debit.limit}</Text>
+            <Text style={styles.balanceText}>
+              {debit.current.toLocaleString('en-US')}
+            </Text>
           </View>
         </View>
       </View>
       <Animated.View
         style={{
-          transform: [{translateY: pan.y.interpolate({
-            inputRange: [-170, 0 ],
-            outputRange: [-170, 0 ],
-            extrapolate: 'clamp'
-        })}],
+          transform: [
+            {
+              translateY: pan.y.interpolate({
+                inputRange: [-170, 0],
+                outputRange: [-170, 0],
+                extrapolate: 'clamp',
+              }),
+            },
+          ],
           flex: 1,
         }}
-        
         {...panResponder.panHandlers}>
         <View style={styles.cardWrapper}>
           <CardBlock />
           {/* Card menu options */}
           <View style={{paddingTop: 0, marginLeft: 32, marginRight: 32}}>
+            {debit.limit > 0 ? <ProgressBar /> : null}
             <CommonCard
               navigation={navigation}
               source={insightLogo}

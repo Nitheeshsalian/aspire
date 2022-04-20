@@ -1,7 +1,8 @@
 import TYPES from '../actions/types';
 
 const initialState = {
-  limit: 1000,
+  limit: 0,
+  current: 3000,
 };
 
 // Use the initialState as a default value

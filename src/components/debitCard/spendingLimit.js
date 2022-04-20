@@ -84,7 +84,7 @@ export function SpendingLimit({navigation}) {
                 fontSize={24}
                 keyboardType="number-pad"
                 onChangeText={onChangeNumber}
-                value={number}
+                value={number ? number.toString() : number}
               />
             </View>
             <Text style={styles.infoText}>
@@ -92,17 +92,17 @@ export function SpendingLimit({navigation}) {
             </Text>
             <View style={styles.amountGroup}>
               <TouchableOpacity
-                onPress={() => updateLimitValue('5000')}
+                onPress={() => updateLimitValue(5000)}
                 style={styles.amountText}>
                 <Text style={styles.amountTextStyle}>S$ 5,000</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                onPress={() => updateLimitValue('10,000')}
+                onPress={() => updateLimitValue(10000)}
                 style={styles.amountText}>
                 <Text style={styles.amountTextStyle}>S$ 10,000</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                onPress={() => updateLimitValue('20,000')}
+                onPress={() => updateLimitValue(20000)}
                 style={styles.amountText}>
                 <Text style={styles.amountTextStyle}>S$ 20,000</Text>
               </TouchableOpacity>
