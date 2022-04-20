@@ -70,10 +70,10 @@ Running test cases
     
     
 ## Addtional info
-- This app is developed using IOS device, but it works in android device also.
+- This app is developed using IOS device, but it also works in android device.
 - This app have Layout scalability. 
 - This app have mock api call from [jsonplaceholder](https://jsonplaceholder.typicode.com/) is only used for GET request to show working of network request handling by app.
-- Server code have not have been implemented.
+- Server code has not been implemented
 - I have used redux store as single source of truth
 - For getting card details we can implement api call to server.
 - Home screen debit card slide implemented using [panrespinder](https://reactnative.dev/docs/panresponder) currently its sliding from top to bottom as per design it should have fixed movement, this should be fixed since i had limited time i have not worked on it.
