@@ -6,3 +6,10 @@ export function updateLimit(payload) {
         payload: payload
     }
 }
+
+export function getUser(payload) {
+    return {
+        type: TYPES.USER_FETCH_REQUESTED,
+        payload: payload
+    }
+}

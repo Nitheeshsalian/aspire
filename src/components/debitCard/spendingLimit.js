@@ -14,9 +14,10 @@ import { faAngleLeft } from '@fortawesome/free-solid-svg-icons/faAngleLeft';
 //import reducer and store
 import { useSelector } from 'react-redux';
 import store from '../../reducers/store';
-import TYPES from '../../actions/types';
 const debitStore = state => state.debit;
 
+// import actions
+import { updateLimit, getUser } from '../../actions/debitAction'
 
 export function SpendingLimit({ navigation }) {
 
@@ -33,8 +34,8 @@ export function SpendingLimit({ navigation }) {
     }
 
     const save = async () => {
-        store.dispatch({ type: TYPES.USER_FETCH_REQUESTED, payload: 1 });
-        store.dispatch({ type: TYPES.INCREMENT_LIMIT, payload: number });
+        store.dispatch(getUser(1));
+        store.dispatch(updateLimit(number));
         goBack()
     }
 
@@ -42,7 +43,7 @@ export function SpendingLimit({ navigation }) {
         navigation.goBack()
     }
 
-    const updateLimit = (value) => {
+    const updateLimitValue = (value) => {
         setNumber(value);
     }
     
@@ -88,13 +89,13 @@ export function SpendingLimit({ navigation }) {
                             Here weekly means the last 7 days - not the calender week
                         </Text>
                         <View style={styles.amountGroup}>
-                            <TouchableOpacity onPress={() => updateLimit('5000')} style={styles.amountText}>
+                            <TouchableOpacity onPress={() => updateLimitValue('5000')} style={styles.amountText}>
                                 <Text style={styles.amountTextStyle}>S$ 5,000</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => updateLimit('10,000')} style={styles.amountText}>
+                            <TouchableOpacity onPress={() => updateLimitValue('10,000')} style={styles.amountText}>
                                 <Text style={styles.amountTextStyle}>S$ 10,000</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => updateLimit('20,000')} style={styles.amountText}>
+                            <TouchableOpacity onPress={() => updateLimitValue('20,000')} style={styles.amountText}>
                                 <Text style={styles.amountTextStyle}>S$ 20,000</Text>
                             </TouchableOpacity>
                         </View>
