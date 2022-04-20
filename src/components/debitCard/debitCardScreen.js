@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react';
-import { View, Image, Switch, Animated, PanResponder } from 'react-native';
+import React, {useEffect, useRef} from 'react';
+import {View, Image, Switch, Animated, PanResponder} from 'react-native';
 import styles from './debitStyle';
 //Custom text component where default font style have been set.
 import Text from '../../utils/text';
-import { CommonCard } from './commonCard';
-import { CardBlock } from './cardBlock';
+import {CommonCard} from './commonCard';
+import {CardBlock} from './cardBlock';
 
 //import images
 const logo = require('../../assets/images/Logo.png');
@@ -14,15 +14,14 @@ const freeze = require('../../assets/images/Freeze.png');
 const deactivated = require('../../assets/images/deactivated.png');
 
 //reducer import
-import { useSelector } from 'react-redux';
+import {useSelector} from 'react-redux';
 const debitStore = state => state.debit;
 
-export function DebitCardScreen({ navigation }) {
-
+export function DebitCardScreen({navigation}) {
   const debit = useSelector(debitStore);
 
   //pan responder to move debit card vertically
-  //This function needs to be fixed to move only sepcified height 
+  //This function needs to be fixed to move only sepcified height
   const pan = useRef(new Animated.ValueXY()).current;
   const panResponder = useRef(
     PanResponder.create({
@@ -30,35 +29,26 @@ export function DebitCardScreen({ navigation }) {
       onPanResponderGrant: () => {
         pan.setOffset({
           x: pan.x._value,
-          y: pan.y._value
+          y: pan.y._value,
         });
       },
-      onPanResponderMove: Animated.event(
-        [
-          null,
-          { dy: pan.y },
-        ],
-        { useNativeDriver: false }
-      ),
+      onPanResponderMove: Animated.event([null, {dy: pan.y}], {
+        useNativeDriver: false,
+      }),
       onPanResponderRelease: () => {
         pan.flattenOffset();
-      }
-    })
+      },
+    }),
   ).current;
-
 
   return (
     <React.Fragment>
-
       <View style={styles.container}>
         <View style={styles.headerWrapper}>
           <Text style={styles.headerText}>Debit Card</Text>
-          <Image
-            style={styles.logo}
-            source={logo}
-          />
+          <Image style={styles.logo} source={logo} />
         </View>
-        <View style={{ marginTop: 24 }}>
+        <View style={{marginTop: 24}}>
           <Text styles={styles.availableText}>Available balance</Text>
           <View style={styles.balanceWrapper}>
             <View style={styles.balanceSqaure}>
@@ -70,17 +60,14 @@ export function DebitCardScreen({ navigation }) {
       </View>
       <Animated.View
         style={{
-          transform: [{ translateY: pan.y }],
-          flex: 1
+          transform: [{translateY: pan.y}],
+          flex: 1,
         }}
-        {...panResponder.panHandlers}
-
-      >
+        {...panResponder.panHandlers}>
         <View style={styles.cardWrapper}>
-
           <CardBlock />
           {/* Card menu options */}
-          <View style={{ paddingTop: 0, marginLeft: 32, marginRight: 32 }}>
+          <View style={{paddingTop: 0, marginLeft: 32, marginRight: 32}}>
             <CommonCard
               navigation={navigation}
               source={insightLogo}
@@ -116,7 +103,6 @@ export function DebitCardScreen({ navigation }) {
               body="Your previously deactivated cards"
             />
           </View>
-
         </View>
       </Animated.View>
     </React.Fragment>
