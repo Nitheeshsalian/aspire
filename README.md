@@ -37,6 +37,8 @@ This is code challenge for Aspire.
     ├── saga                      # saga files are listed here
     └── utils                     # utility functions are listed here
     
+- This app is developed using IOS device, but it works in android device also.
+- This app have Layout scalability. 
 - This app have mock api call from [jsonplaceholder](https://jsonplaceholder.typicode.com/) is only used for GET request to show working of network request handling by app.
 - Server code have not have been implemented.
 - I have used redux store as single source of truth
