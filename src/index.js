@@ -16,11 +16,7 @@ import { SpendingLimit } from './components/debitCard/spendingLimit'
 
 //Icons import
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons/faCreditCard';
-import { faArrowRightArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowRightArrowLeft';
-import { faCircleArrowUp } from '@fortawesome/free-solid-svg-icons/faCircleArrowUp';
-import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
 
 //Import images
 const sync = require('./assets/images/sync.png');

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`selectAvatar Dispatches the correct action and payload 1`] = `
+Array [
+  Object {
+    "payload": 5000,
+    "type": "INCREMENT_LIMIT",
+  },
+  Object {
+    "payload": 5000,
+    "type": "INCREMENT_LIMIT",
+  },
+]
+`;
