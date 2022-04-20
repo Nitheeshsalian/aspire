@@ -32,9 +32,14 @@ export function SpendingLimit({ navigation }) {
         setNumber(value)
     }
 
-    const save = () => {
-        store.dispatch({ type: TYPES.USER_FETCH_REQUESTED, payload: 10 })
-        store.dispatch({ type: TYPES.INCREMENT_LIMIT, payload: number })
+    const save = async () => {
+        store.dispatch({ type: TYPES.USER_FETCH_REQUESTED, payload: 1 });
+        store.dispatch({ type: TYPES.INCREMENT_LIMIT, payload: number });
+        goBack()
+    }
+
+    const goBack = () =>{
+        navigation.goBack()
     }
 
     const updateLimit = (value) => {
@@ -46,7 +51,7 @@ export function SpendingLimit({ navigation }) {
         <React.Fragment>
             <View style={styles.spendingContainer}>
                 <View style={styles.headerWrapper2}>
-                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <TouchableOpacity onPress={goBack}>
                         <FontAwesomeIcon icon={faAngleLeft} color="#fff" size={24} />
                     </TouchableOpacity>
                     <Image

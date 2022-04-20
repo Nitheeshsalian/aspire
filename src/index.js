@@ -1,7 +1,7 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -22,6 +22,12 @@ import { faArrowRightArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrow
 import { faCircleArrowUp } from '@fortawesome/free-solid-svg-icons/faCircleArrowUp';
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
 
+//Import images
+const sync = require('./assets/images/sync.png');
+const logo = require('./assets/images/Logo.png');
+const credit = require('./assets/images/Credit.png');
+const pay = require('./assets/images/pay.png');
+const user = require('./assets/images/user.png');
 const Tab = createBottomTabNavigator();
 const HomeStack = createNativeStackNavigator();
 
@@ -52,7 +58,14 @@ function Routes() {
           component={HomeScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <FontAwesomeIcon icon={faHome} color={color} size={size} />
+              <Image
+                style={{
+                  height: size,
+                  width: size,
+                  tintColor: color
+                }}
+                source={logo}
+              />
             )
           }}
         />
@@ -70,7 +83,14 @@ function Routes() {
           component={PaymentScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <FontAwesomeIcon icon={faArrowRightArrowLeft} color={color} size={size} />
+              <Image
+                style={{
+                  height: size,
+                  width: size,
+                  tintColor: color
+                }}
+                source={sync}
+              />
             )
           }}
         />
@@ -79,7 +99,14 @@ function Routes() {
           component={CreditScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <FontAwesomeIcon icon={faCircleArrowUp} color={color} size={size} />
+              <Image
+                style={{
+                  height: size,
+                  width: size,
+                  tintColor: color
+                }}
+                source={credit}
+              />
             )
           }}
         />
@@ -88,7 +115,14 @@ function Routes() {
           component={ProfileScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <FontAwesomeIcon icon={faUser} color={color} size={size} />
+              <Image
+                style={{
+                  height: 26,
+                  width: 22,
+                  tintColor: color
+                }}
+                source={user}
+              />
             )
           }}
         />

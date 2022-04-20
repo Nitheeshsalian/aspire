@@ -1,16 +1,13 @@
 //mock api function
 export async function getLimit(payload) {
-    const url = "http://mockbin.com/request?foo=bar&foo=baz"
+    const url = "https://jsonplaceholder.typicode.com/posts/" + payload
     console.log(url)
     try {
         let response = await fetch(url, {
-            method: 'POST',
+            method: 'GET',
             headers: {
                 "cookie": "foo=bar; bar=baz",
                 "x-pretty-print": "2"
-            },
-            body: {
-                "foo": "bar"
             }
         })
 

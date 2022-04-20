@@ -21,8 +21,7 @@ export function debitCardReducer(state = initialState, action) {
             };
         case TYPES.USER_FETCH_SUCCEEDED:
             return {
-                ...state,
-                limit: 2020202
+                ...state
             }
 
         default:

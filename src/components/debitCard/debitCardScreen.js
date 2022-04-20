@@ -14,7 +14,6 @@ const freeze = require('../../assets/images/Freeze.png');
 const deactivated = require('../../assets/images/deactivated.png');
 
 //reducer import
-import store from '../../reducers/store';
 import { useSelector } from 'react-redux';
 const debitStore = state => state.debit;
 
