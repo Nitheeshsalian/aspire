@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`selectAvatar Dispatches the correct action and payload 1`] = `
+exports[`Reducer mock Match snapshot 1`] = `
 Array [
   Object {
     "payload": 5000,

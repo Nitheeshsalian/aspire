@@ -15,6 +15,8 @@ jest.mock('@fortawesome/react-native-fontawesome', () => ({
   FontAwesomeIcon: '',
 }));
 
+jest.useFakeTimers();
+
 describe('<App>', () => {
   it('renders app correctly', () => {
     renderer.create(
@@ -52,7 +54,8 @@ describe('Reducer test', () => {
   it('Should set the supplied initial state', () => {
     expect(store.getState()).toEqual({
       debit: {
-        limit: 1000,
+        limit: 0,
+        current: 3000,
       },
     });
   });
@@ -61,7 +64,8 @@ describe('Reducer test', () => {
     const dispatch = jest.fn();
     expect(store.getState()).toEqual({
       debit: {
-        limit: 1000,
+        limit: 0,
+        current: 3000,
       },
     });
   });

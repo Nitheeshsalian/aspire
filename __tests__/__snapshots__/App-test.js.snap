@@ -136,7 +136,7 @@ Array [
             ]
           }
         >
-          1000
+          3,000
         </Text>
       </View>
     </View>
@@ -268,7 +268,7 @@ Array [
             ]
           }
         >
-          Thru: 12/20     CVV:
+          Thru: 12/20 CVV:
            * * *
         </Text>
         <View
