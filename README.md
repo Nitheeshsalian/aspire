@@ -17,3 +17,15 @@ This is code challenge for Aspire.
 
 - [axios](https://github.com/axios/axios) for networking.
 - [redux](https://redux.js.org/) for state management.
+
+##Folder structure 
+
+-src
+  -actions
+  -api
+  -assets
+  -components
+  -reducers
+  -sagas
+  -utils
+  
