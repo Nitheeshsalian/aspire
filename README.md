@@ -76,7 +76,8 @@ Running test cases
 - Server code has not been implemented
 - I have used redux store as single source of truth
 - For getting card details we can implement api call to server.
-- Home screen debit card slide implemented using [panrespinder](https://reactnative.dev/docs/panresponder). Currently its sliding from top to bottom as per design it should have fixed movement, This should be fixed since i had limited time so I couldn’t work on it
+- Home screen debit card slide implemented using [panrespinder](https://reactnative.dev/docs/panresponder). 
+- Test cases are written in basic functionality, coverage of test cased need to be fixed in detailed way.
 
 
   
