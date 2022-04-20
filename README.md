@@ -4,6 +4,8 @@ Nitheesh S 🙂
 
 This is code challenge for Aspire.
 
+This app have created using react native init  `npx react-native init AwesomeProject`
+
 ## PrerequisitesCancel changes
 
 - [Node.js](https://nodejs.org) and npm (Recommended: Use [nvm](https://github.com/nvm-sh/nvm))
