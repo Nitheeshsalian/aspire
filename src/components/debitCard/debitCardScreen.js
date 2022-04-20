@@ -60,9 +60,14 @@ export function DebitCardScreen({navigation}) {
       </View>
       <Animated.View
         style={{
-          transform: [{translateY: pan.y}],
+          transform: [{translateY: pan.y.interpolate({
+            inputRange: [-170, 0 ],
+            outputRange: [-170, 0 ],
+            extrapolate: 'clamp'
+        })}],
           flex: 1,
         }}
+        
         {...panResponder.panHandlers}>
         <View style={styles.cardWrapper}>
           <CardBlock />
