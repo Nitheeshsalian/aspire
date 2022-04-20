@@ -24,8 +24,10 @@ This app have created using react native init  `npx react-native init AwesomePro
 - [axios](https://github.com/axios/axios) 
 
 ## Other libraries
-- [font awesome](https://fontawesome.com/start)
-- [react native svg](https://www.npmjs.com/package/react-native-svg)
+- [font-awesome](https://fontawesome.com/start)
+- [react-native-svg](https://www.npmjs.com/package/react-native-svg)
+- [redux-mock-store](https://github.com/reduxjs/redux-mock-store)
+- [react-test-renderer](https://reactjs.org/docs/test-renderer.html)
 
 ## Folder structure 
 
@@ -38,7 +40,34 @@ This app have created using react native init  `npx react-native init AwesomePro
     ├── reduceers                 # reducers are listed inside (index file will have all reducers combined and store will have reducer setup)
     ├── saga                      # saga files are listed here
     └── utils                     # utility functions are listed here
+   
+   
+## To run app
+
+Make sure your machine have required set up to run app <br />
+Please follow this [link](https://reactnative.dev/docs/environment-setup) to setting up the development environment
+Install dependencies  <br />
+
+`npm install`  <br />
+
+After that install pods for ios  <br />
+
+`cd ios && pod install` <br />
+
+To run app in ios device use command  <br />
+
+`npx react-native run-ios`  <br />
+
+To run app in ios device use command  <br />
+
+`npx react-native run-android`  <br />
+
+Running test cases 
+
+`npm run test`
     
+    
+## Addtional info
 - This app is developed using IOS device, but it works in android device also.
 - This app have Layout scalability. 
 - This app have mock api call from [jsonplaceholder](https://jsonplaceholder.typicode.com/) is only used for GET request to show working of network request handling by app.
